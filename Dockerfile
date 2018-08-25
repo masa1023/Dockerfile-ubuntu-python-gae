@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y \
     libmysqlclient-dev
 
 # Add user
-ARG user_name
-ARG user_password
+ARG user_name="masa"
+ARG user_password="password"
 RUN useradd -m ${user_name} && \
     echo "${user_name}:${user_password}" | chpasswd
 RUN echo "${user_name} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
