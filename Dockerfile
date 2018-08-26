@@ -37,7 +37,6 @@ RUN sudo apt-get install -y \
 
 # Upgrade version of pip
 RUN sudo pip install --upgrade pip
-RUN sudo pip install MySQL-python
 
 # Set environment variables
 ENV CLOUD_SDK_REPO "cloud-sdk-xenial"
