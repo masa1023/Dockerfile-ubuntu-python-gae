@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     libmysqlclient-dev
 
 # Add user
-ARG user_name="masa"
+ARG user_name="ubuntu"
 ARG user_password="password"
 RUN useradd -m ${user_name} && \
     echo "${user_name}:${user_password}" | chpasswd
@@ -40,7 +40,7 @@ RUN sudo pip install --upgrade pip
 
 # Set environment variables
 ENV CLOUD_SDK_REPO "cloud-sdk-xenial"
-ENV PYTHONPATH $PYTHONPATH:/usr/lib/google-cloud-sdk/platform/google_appengine
+ENV PYTHONPATH /usr/lib/google-cloud-sdk/platform/google_appengine
 
 # Install Google Cloud SDK libraries
 RUN echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
@@ -51,3 +51,4 @@ RUN sudo apt-get install -y \
     google-cloud-sdk-app-engine-python \
     google-cloud-sdk-app-engine-python-extras \
     google-cloud-sdk-datastore-emulator
+
