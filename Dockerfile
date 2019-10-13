@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER masa1023 "west013minami@gmail.com"
+MAINTAINER masa1023 "masa373.dev@gmail.com"
 
 # Install necessary tools
 RUN apt-get update && apt-get install -y \
